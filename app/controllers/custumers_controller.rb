@@ -15,5 +15,10 @@ class CustumersController < ApplicationController
     else
       @custumers = []
     end
+
+    respond_to do |format|
+      format.html {}
+      format.json {render json: @custumers}
+    end
   end
 end
