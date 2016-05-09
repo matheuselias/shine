@@ -144,6 +144,27 @@ ALTER TABLE ONLY users
 
 
 --
+-- Name: custumers_lower_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX custumers_lower_email ON custumers USING btree (lower((email)::text));
+
+
+--
+-- Name: custumers_lower_first_name; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX custumers_lower_first_name ON custumers USING btree (lower((first_name)::text) varchar_pattern_ops);
+
+
+--
+-- Name: custumers_lower_last_name; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX custumers_lower_last_name ON custumers USING btree (lower((last_name)::text) varchar_pattern_ops);
+
+
+--
 -- Name: index_custumers_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -189,4 +210,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160507034352');
 INSERT INTO schema_migrations (version) VALUES ('20160508015848');
 
 INSERT INTO schema_migrations (version) VALUES ('20160508053004');
+
+INSERT INTO schema_migrations (version) VALUES ('20160509132327');
 
